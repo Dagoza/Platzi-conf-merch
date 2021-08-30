@@ -1,0 +1,15 @@
+{
+    "short_name": "Platzi Conf Store",
+    "name": "A simple Store",
+    "icons": [
+      {
+        "src": "assets/icon.svg",
+        "sizes": "512x512",
+        "type": "image/svg"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#222",
+    "theme_color": "#222",
+    "display": "standalone"
+  }

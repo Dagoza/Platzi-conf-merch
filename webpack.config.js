@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 /** @type {import('webpack').Configuration} **/
 
 module.exports = {
@@ -52,7 +53,14 @@ module.exports = {
       new MiniCssExtractPlugin({
           filename: 'assets/[name].css',
       }),
-      new Dotenv()
+      new Dotenv(),
+      new CopyPlugin({
+        patterns: [
+          { from: 'public/manifest.json', to: '' },
+          { from: 'public/service-worker.js', to: '' },
+          { from: 'public/icon.svg', to: 'assets' },
+        ],
+      }),
     ],
     devtool: 'source-map',
     devServer: {
